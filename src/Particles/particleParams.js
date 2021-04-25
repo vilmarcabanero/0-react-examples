@@ -54,7 +54,7 @@ const particleParams = {
 			width: 1,
 		},
 		move: {
-			enable: false,
+			enable: true,
 			speed: 1,
 			direction: 'none',
 			random: false,

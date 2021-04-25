@@ -24,4 +24,13 @@ const StyledParticles = styled.div`
 	.particles {
 		width: 100%;
 	}
+
 `
+
+class F {
+	some() {
+		var w = 1
+		let x = 'sass'
+		function z() {}
+	}
+}

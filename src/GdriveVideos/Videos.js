@@ -31,6 +31,7 @@ const Videos = () => {
 	)
 }
 
+
 const StyledVideo = styled.div`
 	width: 640px;
 	height: 480px;
