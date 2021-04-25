@@ -1,4 +1,4 @@
-const particlesParams = {
+const particleParams = {
 	particles: {
 		number: {
 			// value: 80,
@@ -110,4 +110,12 @@ const particlesParams = {
 	retina_detect: true,
 }
 
-export default particlesParams
+export const particlesMoveToggler = () => {
+	if(particleParams.particles.move.enable === true) {
+		particleParams.particles.move.enable = false
+	} else {
+		particleParams.particles.move.enable = true
+	}
+	console.log(particleParams.particles.move.enable)
+}
+export default particleParams

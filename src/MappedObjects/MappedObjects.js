@@ -1,13 +1,17 @@
 import styled from 'styled-components'
 import users from './users'
+import particleParams from '../Particles/particleParams'
 import logo from '../assets/images/logo.png'
+import {particlesMoveToggler} from '../Particles/particleParams'
 
 const MappedObjects = () => {
+
 	return (
 		<>
 			{users.map(userInfo => {
 				return (
 					<StyledUser>
+            <button onClick={() => particlesMoveToggler()}>Stop Animation</button>
 						<h3>{userInfo.name}</h3>
 						<span>{userInfo.age}</span>
 						<span>{userInfo.gender}</span>
@@ -103,4 +107,7 @@ const StyledVideo = styled.div`
 		}
 	}
 `
+
+
+console.log(particleParams.particles.move.enable)
 export default MappedObjects
