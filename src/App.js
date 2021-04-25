@@ -1,5 +1,6 @@
 import './App.css';
 import ParticleBackground from './Particles/ParticleBackground'
+import MappedObjects from './MappedObjects/MappedObjects'
 // import Videos from './GdriveVideos/Videos'
 
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <ParticleBackground />
       {/* <Videos/> */}
+      <MappedObjects />
     </>
   );
 }
