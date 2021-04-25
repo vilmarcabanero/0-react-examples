@@ -16,7 +16,7 @@ const MappedObjects = () => {
 						<span>{problems.choices.join(` `)} </span>
 						<span>{problems.answer}</span>
 						<span>{problems.solution}</span>
-						<StyledVideo className='video'>
+						<StyledVideo>
 							<iframe
 								title='Algebra 1.3'
 								src={problems.videoSolution}
@@ -59,6 +59,14 @@ const StyledUser = styled.div`
 	> h3 {
 		margin: 0;
 	}
+
+	@media (max-width: 40rem) {
+		& {
+			width: 22.5rem;
+			position: relative;
+			margin: 3rem 0;
+		}
+	}
 `
 
 const StyledVideo = styled.div`
@@ -84,7 +92,7 @@ const StyledVideo = styled.div`
 	}
 
 	@media (max-width: 40rem) {
-		.video {
+		& {
 			width: 22.5rem;
 			height: 16.875rem;
 
