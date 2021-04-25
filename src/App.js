@@ -1,12 +1,10 @@
 import './App.css';
-import ParticlesContainer from './Particles/ParticlesContainer'
+import ParticleBackground from './Particles/ParticleBackground'
 
 
 function App() {
   return (
-    <div>
-      <ParticlesContainer />
-    </div>
+      <ParticleBackground />
   );
 }
 
