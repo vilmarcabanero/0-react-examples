@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import users from './users'
+import problems from './problems'
 import particleParams from '../Particles/particleParams'
 import logo from '../assets/images/logo.png'
 import {particlesMoveToggler} from '../Particles/particleParams'
@@ -8,17 +8,18 @@ const MappedObjects = () => {
 
 	return (
 		<>
-			{users.map(userInfo => {
+			{problems.map(problems => {
 				return (
 					<StyledUser>
             <button onClick={() => particlesMoveToggler()}>Stop Animation</button>
-						<h3>{userInfo.name}</h3>
-						<span>{userInfo.age}</span>
-						<span>{userInfo.gender}</span>
+						<h5>{problems.question}</h5>
+						<span>{problems.choices.join(` `)} </span>
+						<span>{problems.answer}</span>
+						<span>{problems.solution}</span>
 						<StyledVideo className='video'>
 							<iframe
 								title='Algebra 1.3'
-								src={userInfo.url}
+								src={problems.videoSolution}
 								width='100%'
 								height='100%'
 								frameborder='0'
@@ -48,10 +49,11 @@ const StyledUser = styled.div`
 	margin: 4rem auto;
 	width: 40rem;
 	padding: 2rem;
+	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	background-color: #262626;
 	color: white;
 	> h3 {
