@@ -18,7 +18,8 @@ const StyledParticles = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: #4398ff;
+	/* background-color: #4398ff; */
+	background-color: #343434;
 
 	.particles {
 		width: 100%;
