@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import parse from "html-react-parser";
+import parse from 'html-react-parser'
 
 const RenderHTML = () => {
 	const htmlString = '<h1>Hello World</h1>'
@@ -8,7 +8,7 @@ const RenderHTML = () => {
 		<StyledRender>
 			{htmlString}
 			<div dangerouslySetInnerHTML={{ __html: htmlString }}></div>
-      <div>{parse(htmlString)}</div> 
+			<div>{parse(htmlString)}</div>
 		</StyledRender>
 	)
 }
