@@ -27,10 +27,3 @@ const StyledParticles = styled.div`
 
 `
 
-class F {
-	some() {
-		var w = 1
-		let x = 'sass'
-		function z() {}
-	}
-}

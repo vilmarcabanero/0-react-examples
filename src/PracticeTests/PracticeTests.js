@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import problems from './problems'
 import particleParams from '../Particles/particleParams'
 import logo from '../assets/images/logo.png'
-import {particlesMoveToggler} from '../Particles/particleParams'
+// import {particlesMoveToggler} from '../Particles/particleParams'
 
 const MappedObjects = () => {
 
@@ -11,7 +11,7 @@ const MappedObjects = () => {
 			{problems.map(problems => {
 				return (
 					<StyledUser>
-            <button onClick={() => particlesMoveToggler()}>Stop Animation</button>
+            {/* <button onClick={() => particlesMoveToggler()}>Stop Animation</button> */}
 						<h5>{problems.question}</h5>
 						<span>{problems.choices.join(` `)} </span>
 						<span>{problems.answer}</span>
