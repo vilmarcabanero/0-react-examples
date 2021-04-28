@@ -80,12 +80,12 @@ const Styled = styled.div`
 
 	h1 {
 		font-size: 2rem;
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 	}
 	.custom-input {
 		position: relative;
 		width: 100%;
-		margin-bottom: 1.25rem;
+		margin-bottom: 1.75rem;
 
 		.firstname {
 			border-radius: 0 0 0 5px;
@@ -116,7 +116,7 @@ const Styled = styled.div`
 
 			&:valid + .placeholder,
 			&:focus + .placeholder {
-				top: -10px;
+				top: -13px;
 				font-size: 0.75rem;
 				color: ${lightGray};
 			}
@@ -159,7 +159,7 @@ const Styled = styled.div`
 		}
 
 		.visibility {
-			margin-bottom: 2.5rem;
+			margin-bottom: 3.5rem;
 			padding: 0.5rem 0 0.5rem 0;
 			position: absolute;
 			right: 0rem;

@@ -1,6 +1,4 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { InputBase, Button } from '@material-ui/core'
 import styled from 'styled-components'
 import usePasswordToggle from './usePasswordToggle'
 
@@ -9,88 +7,33 @@ const gray = '808080'
 const lightGray = '#D3D3D3'
 const gainsboro = '#DCDCDC'
 
-const useStyles = makeStyles(theme => ({
-	root: {
-		'& > *': {
-			// margin: theme.spacing(1),
-			// width: '45ch',
-			// width: '100%'
-		},
-	},
-	password: {
-		width: 'inherit !important',
-		borderRadius: theme.shape.borderRadius,
-		color: 'white',
-		backgroundColor: 'transparent',
-		borderBottom: `1px solid ${gainsboro}`,
-		height: '2.5rem',
-		padding: theme.spacing(1),
-		paddingBottom: '0px',
-		marginBottom: '3rem',
-		marginRight: '0px',
-	},
-	email: {
-		width: 'inherit !important',
-		borderRadius: theme.shape.borderRadius,
-		color: 'white',
-		borderBottom: `1px solid ${gainsboro}`,
-		height: '2.5rem',
-		padding: theme.spacing(1),
-		paddingBottom: '0px',
-		marginBottom: '1rem',
-		backgroundColor: 'transparent',
-	},
-	button: {
-		height: '2.75rem',
-		width: '100%',
-		color: 'white',
-		fontSize: '1.2rem',
-		backgroundColor: '#06f',
-		border: '1px solid #06f',
-		// height: '45px',
-		'&:hover': {
-			fontSize: '1.2rem',
-		},
-		passwordField: {
-			marginBottom: '1rem',
-		},
-	},
-}))
 
 export default function SignIn() {
-	const classes = useStyles()
 	const [PasswordInputType, ToggleIcon] = usePasswordToggle()
 
 	return (
 		<>
+
 			<Styled>
 				<h1>Sign in</h1>
-				<form className={classes.root} autoComplete='off'>
-					{/* <TextField
-						id='standard-basic'
-						label='Email address'
-						variant='standard'
-						className={classes.textField}
-					/>{' '} */}
-					<div className='input'>
-						<InputBase
-							placeholder='Email address'
-							variant='outlined'
-							className={classes.email}
-						/>{' '}
-						<InputBase
-							placeholder='Password'
-							type={PasswordInputType}
-							variant='outlined'
-							className={classes.password}
-						/>
-						<div className='visibility'>{ToggleIcon}</div>
-					</div>
-				</form>
+				<div className='flex'>
+					<label class='custom-input'>
+						<input className='firstname' required />
+						<span className='placeholder'>Email address</span>
+					</label>
+				</div>
+
+				<div className='password-container'>
+					<label class='custom-input'>
+						<input className='password' type={PasswordInputType} required />
+						<span className='placeholder'>Password</span>
+					</label>
+					<div className='visibility'>{ToggleIcon}</div>
+				</div>
 				<a href='/' className='forgot-password'>
 					Forgot password?
 				</a>
-				<Button className={classes.button}>Sign in</Button>
+				<button>Sign in</button>
 				<div className='new'>
 					<span>New to Entropiya? </span> <a href='/'> Sign up now</a>
 				</div>
@@ -124,7 +67,7 @@ const Styled = styled.div`
 		& {
 			width: 22.5rem;
 			position: relative;
-			
+
 			margin-top: 3rem;
 			margin-bottom: 1.5rem;
 			margin-left: auto;
@@ -151,12 +94,124 @@ const Styled = styled.div`
 		}
 	}
 
+	//begin
 	h1 {
 		font-size: 2rem;
+		margin-bottom: 2.5rem;
 	}
+	.custom-input {
+		position: relative;
+		width: 100%;
+		margin-bottom: 1.75rem;
+
+		.firstname {
+			border-radius: 0 0 0 5px;
+		}
+
+		.lastname {
+			border-radius: 0 0 5px 0;
+		}
+
+		.password {
+			border-radius: 5px;
+			margin-bottom: 1rem;
+		}
+
+		input {
+			font-size: 1rem;
+			width: 100%;
+			/* border-radius: 5px; */
+			color: white;
+			border-bottom: 1px solid ${gainsboro};
+			height: 2rem;
+			padding-left: 0.5rem;
+			background-color: transparent;
+			outline: none;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+
+			&:valid + .placeholder,
+			&:focus + .placeholder {
+				top: -13px;
+				font-size: 0.75rem;
+				color: ${lightGray};
+			}
+		}
+
+		.placeholder {
+			font-size: 1rem;
+			position: absolute;
+			left: 0.5rem;
+			top: 0.75rem;
+			color: #aaa;
+			transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+			cursor: text;
+		}
+	}
+
+	.flex {
+		display: flex;
+		position: relative;
+		width: 24.5rem;
+		@media (max-width: 46rem) {
+			& {
+				width: 22rem;
+			}
+		}
+	}
+
+	.password-container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: inherit;
+
+		width: 24.5rem;
+		@media (max-width: 46rem) {
+			& {
+				width: 22rem;
+			}
+		}
+
+		.visibility {
+			margin-bottom: 2.5rem;
+			padding: 0.5rem 0 0.5rem 0;
+			position: absolute;
+			right: 0rem;
+			cursor: pointer;
+			z-index: 20;
+		}
+	}
+
+	button {
+		height: 2.75rem;
+		width: 25rem;
+		color: white;
+		margin-right: auto;
+		margin-left: auto;
+		font-size: 1.2rem;
+		background-color: #06f;
+		border: 1px solid #06f;
+		border-radius: 0.2rem;
+		&:hover {
+			font-size: 1.2rem;
+			cursor: pointer;
+			background-color: transparent;
+		}
+
+		@media (max-width: 46rem) {
+			& {
+				width: 22.5rem;
+			}
+		}
+	}
+
+	//End
 
 	.forgot-password {
 		align-self: flex-start;
+		margin-top: -1rem;
 		margin-bottom: 2rem;
 		text-decoration: none;
 		color: white;

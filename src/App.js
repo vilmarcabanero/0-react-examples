@@ -14,7 +14,7 @@ function App() {
 			<ParticleBackground />
 			{/* <Videos/> */}
 			{/* <PracticeTests /> */} 
-      <InputStyling />
+      {/* <InputStyling /> */}
 			<SignUp/>
       <SignIn/>
 		</>
