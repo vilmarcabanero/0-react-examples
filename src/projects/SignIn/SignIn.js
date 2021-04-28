@@ -13,12 +13,12 @@ const useStyles = makeStyles(theme => ({
 	root: {
 		'& > *': {
 			// margin: theme.spacing(1),
-			// width: '25ch',
+			// width: '45ch',
 			// width: '100%'
 		},
 	},
 	password: {
-		width: '100%',
+		width: '100% !important',
 		borderRadius: theme.shape.borderRadius,
 		color: 'white',
 		backgroundColor: 'transparent',
@@ -29,8 +29,8 @@ const useStyles = makeStyles(theme => ({
 		marginBottom: '3rem',
 		marginRight: '0px',
 	},
-	name: {
-		width: '50%',
+	email: {
+		width: '100% !important',
 		borderRadius: theme.shape.borderRadius,
 		color: 'white',
 		borderBottom: `1px solid ${gainsboro}`,
@@ -38,6 +38,7 @@ const useStyles = makeStyles(theme => ({
 		padding: theme.spacing(1),
 		paddingBottom: '0px',
 		marginBottom: '1rem',
+		backgroundColor: 'transparent',
 	},
 	button: {
 		height: '2.75rem',
@@ -56,47 +57,42 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default function SignUp() {
+export default function SignIn() {
 	const classes = useStyles()
 	const [PasswordInputType, ToggleIcon] = usePasswordToggle()
 
 	return (
 		<>
 			<Styled>
-				<h1>Create an account</h1>
-				<form className={classes.root} noValidate autoComplete='off'>
+				<h1>Sign in</h1>
+				<form className={classes.root} autoComplete='off'>
 					{/* <TextField
 						id='standard-basic'
 						label='Email address'
 						variant='standard'
 						className={classes.textField}
 					/>{' '} */}
-					<InputBase
-						placeholder='First Name'
-						variant='outlined'
-						className={classes.name}
-					/>
-					<InputBase
-						placeholder='Last Name'
-						variant='outlined'
-						className={classes.name}
-					/>
-					<div className='password-container'>
+					<div className='input'>
 						<InputBase
-							placeholder='Password'
-							type={PasswordInputType}
+							placeholder='Email address'
 							variant='outlined'
-							className={classes.password}
+							className={classes.email}
 						/>
-						<div className='visibility'>{ToggleIcon}</div>
+						<div className='password-container'>
+							<InputBase
+								placeholder='Password'
+								type={PasswordInputType}
+								variant='outlined'
+								className={classes.password}
+							/>
+							<div className='visibility'>{ToggleIcon}</div>
+						</div>
 					</div>
 				</form>
-
-				<Button className={classes.button}>Sign up</Button>
-				<div>
-					<div>
-						<span>Already have an account? </span> <a href='/'> Sign in</a>
-					</div>
+				<a href='/' className='forgot-password'>Forgot password?</a>
+				<Button className={classes.button}>Sign in</Button>
+				<div className='new'>
+					<span>New to Entropiya? </span> <a href='/'> Sign up now</a>
 				</div>
 			</Styled>
 		</>
@@ -121,7 +117,7 @@ const Styled = styled.div`
 	align-items: flex-start;
 	/* background-color: #262626; */
 	/* background-color: rgba(38, 38, 38, 0.75); */
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.6);
 	color: white;
 
 	@media (max-width: 46rem) {
@@ -129,6 +125,14 @@ const Styled = styled.div`
 			width: 22.5rem;
 			position: relative;
 			margin: 3rem 1.5rem auto auto;
+		}
+	}
+
+	.input {
+		width: 45ch;
+
+		@media (max-width: 30rem) {
+			width: 40ch;
 		}
 	}
 
@@ -146,22 +150,30 @@ const Styled = styled.div`
 			position: absolute;
 			right: 3.5rem;
 			cursor: pointer;
-			z-index: 20;
+			z-index: 5;
 		}
 	}
 
-	> div {
-		> div {
-			position: absolute;
-			right: 4.5rem;
-			margin-top: 0.75rem;
-			> a {
-				text-decoration: none;
-				color: white;
-				font-weight: 550;
-				&:hover {
-					opacity: 0.75;
-				}
+	.forgot-password {
+		align-self: flex-start;
+		margin-bottom: 2rem;
+		text-decoration: none;
+			color: white;
+			font-weight: 550;
+			&:hover {
+				opacity: 0.75;
+			}
+	}
+
+	.new {
+		margin-top: 2rem;
+		align-self: flex-end;
+		> a {
+			text-decoration: none;
+			color: white;
+			font-weight: 550;
+			&:hover {
+				opacity: 0.75;
 			}
 		}
 	}
