@@ -2,6 +2,8 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { TextField, InputBase, Button } from '@material-ui/core'
 import styled from 'styled-components'
+import PasswordField from 'material-ui-password-field'
+import { Visibility, VisibilityOff } from '@material-ui/icons'
 
 const darkGray = '#A9A9A9'
 const gray = '808080'
@@ -27,6 +29,7 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		borderRadius: theme.shape.borderRadius,
 		color: 'white',
+		backgroundColor: 'transparent',
 		borderBottom: `1px solid ${gainsboro}`,
 		height: '2.5rem',
 		padding: theme.spacing(1),
@@ -55,6 +58,9 @@ const useStyles = makeStyles(theme => ({
 		'&:hover': {
 			fontSize: '1.2rem',
 		},
+		passwordField: {
+			marginBottom: '1rem',
+		},
 	},
 }))
 
@@ -72,30 +78,43 @@ export default function BasicTextFields() {
 						variant='standard'
 						className={classes.textField}
 					/>{' '} */}
-					<br />
 					<InputBase
 						placeholder='First Name'
 						variant='outlined'
 						className={classes.name}
-						InputLabelProps={{ id: 'inputBaseLabel' }}
 					/>
 					<InputBase
 						placeholder='Last Name'
 						variant='outlined'
 						className={classes.name}
 					/>
-					<br />
-					<InputBase
-						placeholder='Password'
-						variant='outlined'
-						className={classes.password}
-					/>
-					<InputBase
-						placeholder='Confirm password'
-						variant='outlined'
-						className={classes.password}
-					/>
+					<div className='password-container'>
+						<InputBase
+							placeholder='Password'
+							type='password'
+							variant='outlined'
+							className={classes.password}
+						/>
+						<Visibility className='visibility' />
+					</div>
+
+					<div className='password-container'>
+						<InputBase
+							placeholder='Confirm password'
+							type='password'
+							variant='outlined'
+							className={classes.password}
+						/>
+						<VisibilityOff className='visibility' />
+					</div>
 				</form>
+				<div className='password-container'>
+					<PasswordField
+						placeholder='Confirm password'
+						className={classes.password}
+					/>
+				</div>
+
 				<Button className={classes.button}>Sign up</Button>
 			</StyledTextField>
 		</>
@@ -108,7 +127,7 @@ const StyledTextField = styled.div`
 	/* width: 40rem; */
 	/* width: 28rem; //sing in page */
 	/* height: 40rem; */
-	width: 20rem;
+	width: 25rem;
 	padding-left: 4rem;
 	padding-right: 4rem;
 	padding-top: 3rem;
@@ -129,8 +148,21 @@ const StyledTextField = styled.div`
 			position: relative;
 			margin: 3rem 1.5rem auto auto;
 		}
-		h1 {
-			font-size: 2rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	.password-container {
+		display: flex;
+		align-items: center;
+
+		.visibility {
+			margin-bottom: 0.7rem;
+			position: absolute;
+			right: 4.5rem;
+			cursor: pointer;
 		}
 	}
 `
