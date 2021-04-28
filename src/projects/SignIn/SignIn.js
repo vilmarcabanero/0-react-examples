@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	password: {
-		width: '100% !important',
+		width: 'inherit !important',
 		borderRadius: theme.shape.borderRadius,
 		color: 'white',
 		backgroundColor: 'transparent',
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 		marginRight: '0px',
 	},
 	email: {
-		width: '100% !important',
+		width: 'inherit !important',
 		borderRadius: theme.shape.borderRadius,
 		color: 'white',
 		borderBottom: `1px solid ${gainsboro}`,
@@ -77,19 +77,19 @@ export default function SignIn() {
 							placeholder='Email address'
 							variant='outlined'
 							className={classes.email}
+						/>{' '}
+						<InputBase
+							placeholder='Password'
+							type={PasswordInputType}
+							variant='outlined'
+							className={classes.password}
 						/>
-						<div className='password-container'>
-							<InputBase
-								placeholder='Password'
-								type={PasswordInputType}
-								variant='outlined'
-								className={classes.password}
-							/>
-							<div className='visibility'>{ToggleIcon}</div>
-						</div>
+						<div className='visibility'>{ToggleIcon}</div>
 					</div>
 				</form>
-				<a href='/' className='forgot-password'>Forgot password?</a>
+				<a href='/' className='forgot-password'>
+					Forgot password?
+				</a>
 				<Button className={classes.button}>Sign in</Button>
 				<div className='new'>
 					<span>New to Entropiya? </span> <a href='/'> Sign up now</a>
@@ -124,16 +124,30 @@ const Styled = styled.div`
 		& {
 			width: 22.5rem;
 			position: relative;
-			margin: 3rem 1.5rem auto auto;
+			
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
 	.input {
-		width: 45ch;
+		width: 100%;
 		position: relative;
 
 		@media (max-width: 30rem) {
 			width: 40ch;
+		}
+
+		.visibility {
+			/* margin-bottom: 2.25rem; */
+			padding: 0.5rem;
+			position: absolute;
+			top: 4rem;
+			right: 0rem;
+			cursor: pointer;
+			z-index: 5;
 		}
 	}
 
@@ -141,29 +155,15 @@ const Styled = styled.div`
 		font-size: 2rem;
 	}
 
-	.password-container {
-		display: flex;
-		align-items: center;
-
-		.visibility {
-			margin-bottom: 2.25rem;
-			padding: 0.5rem;
-			position: absolute;
-			right: 0rem;
-			cursor: pointer;
-			z-index: 5;
-		}
-	}
-
 	.forgot-password {
 		align-self: flex-start;
 		margin-bottom: 2rem;
 		text-decoration: none;
-			color: white;
-			font-weight: 550;
-			&:hover {
-				opacity: 0.75;
-			}
+		color: white;
+		font-weight: 550;
+		&:hover {
+			opacity: 0.75;
+		}
 	}
 
 	.new {

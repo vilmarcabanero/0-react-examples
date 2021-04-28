@@ -129,7 +129,10 @@ const Styled = styled.div`
 		& {
 			width: 22.5rem;
 			position: relative;
-			margin: 3rem 1.5rem auto auto;
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 

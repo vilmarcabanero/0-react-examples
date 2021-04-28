@@ -4,6 +4,9 @@ import { InputBase } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 const gainsboro = '#DCDCDC'
+const darkGray = '#A9A9A9'
+const gray = '808080'
+const lightGray = '#D3D3D3'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -14,7 +17,8 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	email: {
-		width: '100% !important',
+		fontSize: '1rem',
+		width: 'inherit',
 		borderRadius: theme.shape.borderRadius,
 		color: 'white',
 		borderBottom: `1px solid ${gainsboro}`,
@@ -30,14 +34,14 @@ const InputStyling = () => {
 	const classes = useStyles()
 	return (
 		<Component>
-      <label class='custom-field'>
-        <InputBase
-				placeholder='Email address'
-				variant='outlined'
-				className={classes.email}
-			/>
-      </label>
-			
+			<label class='custom-input'>
+				<InputBase id='input' className={classes.email} />
+				<span className='placeholder'>Email address</span>
+			</label>
+			<label class='custom-field'>
+				<input className={classes.email} required />
+				<span className='placeholder'>Email address</span>
+			</label>
 		</Component>
 	)
 }
@@ -63,10 +67,49 @@ const Component = styled.div`
 	background-color: rgba(0, 0, 0, 0.6);
 	color: white;
 
-  .custom-field {
-    position: relative;
-    padding-top: 1rem;
-  }
+	.custom-input {
+		position: relative;
+		width: 100%;
+
+    #input {
+
+    }
+		.placeholder {
+			font-size: 1rem;
+			position: absolute;
+			left: 0.5rem;
+			top: 1rem;
+			color: ${darkGray};
+		}
+
+	}
+
+	.custom-field {
+		position: relative;
+		width: 100%;
+
+		input {
+			outline: none;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+
+			&:valid + .placeholder, &:focus + .placeholder {
+				top: 0;
+				font-size: 0.7rem;
+				color: ${lightGray};
+			}
+		}
+		.placeholder {
+			font-size: 1rem;
+			position: absolute;
+			left: 0.5rem;
+			top: 1.6rem;
+			color: #aaa;
+			transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+      cursor: text;
+		}
+	}
 `
 
 export default InputStyling
