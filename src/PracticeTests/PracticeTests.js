@@ -54,7 +54,8 @@ const StyledUser = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	background-color: #262626;
+	/* background-color: #262626; */
+	background-color: rgba(0, 0, 0, 0.4);
 	color: white;
 	> h3 {
 		margin: 0;
