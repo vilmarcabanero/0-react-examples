@@ -2,7 +2,8 @@
 import React from 'react'
 import './App.css';
 import ParticleBackground from './Particles/ParticleBackground'
-import PracticeTests from './PracticeTests/PracticeTests'
+import PracticeTests from './projects/PracticeTests/PracticeTests'
+import BasicTextFields from './projects/SignUp/SignUp'
 // import Videos from './GdriveVideos/Videos'
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <>
       <ParticleBackground />
       {/* <Videos/> */}
-      <PracticeTests />
+      {/* <PracticeTests /> */}
+      <BasicTextFields/>
     </>
   );
 }

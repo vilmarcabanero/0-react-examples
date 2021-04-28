@@ -14,7 +14,7 @@ const RenderHTML = () => {
 }
 
 const StyledRender = styled.div`
-	position: relative;
+		position: relative;
 	margin: 4rem auto;
 	width: 40rem;
 	padding: 2rem;
