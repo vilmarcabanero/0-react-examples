@@ -4,7 +4,6 @@ import particleParams from '../../Particles/particleParams'
 import logo from '../../assets/images/logo.png'
 // import {particlesMoveToggler} from '../Particles/particleParams'
 // import { TextField } from '@material-ui/core'
-import BasicTextFields from '../SignUp/SignUp'
 
 const MappedObjects = () => {
 	return (
@@ -13,7 +12,7 @@ const MappedObjects = () => {
 				return (
 					<StyledUser>
 
-						<BasicTextFields/>
+						
 						{/* <h5>{problems.question}</h5>
 						<span>{problems.choices.join(` `)} </span>
 						<span>{problems.answer}</span>

@@ -130,6 +130,7 @@ const Styled = styled.div`
 
 	.input {
 		width: 45ch;
+		position: relative;
 
 		@media (max-width: 30rem) {
 			width: 40ch;
@@ -146,9 +147,9 @@ const Styled = styled.div`
 
 		.visibility {
 			margin-bottom: 2.25rem;
-			padding: 1rem;
+			padding: 0.5rem;
 			position: absolute;
-			right: 3.5rem;
+			right: 0rem;
 			cursor: pointer;
 			z-index: 5;
 		}

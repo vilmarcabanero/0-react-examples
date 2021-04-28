@@ -1,25 +1,27 @@
 //Main
 import React from 'react'
-import './App.css';
+import './App.css'
 import ParticleBackground from './Particles/ParticleBackground'
 import PracticeTests from './projects/PracticeTests/PracticeTests'
 import SignUp from './projects/SignUp/SignUp'
 import SignIn from './projects/SignIn/SignIn'
 // import Videos from './GdriveVideos/Videos'
+import InputStyling from './projects/InputStyling/InputStyling'
 
 function App() {
-  return (
-    <>
-      <ParticleBackground />
-      {/* <Videos/> */}
-      {/* <PracticeTests /> */}
-      <SignUp/>
+	return (
+		<>
+			<ParticleBackground />
+			{/* <Videos/> */}
+			{/* <PracticeTests /> */} 
+      <InputStyling />
+			<SignUp/>
       <SignIn/>
-    </>
-  );
+		</>
+	)
 }
 
-export default App;
+export default App
 
 //Fade Transition
 // import React, { Component } from 'react';
@@ -69,7 +71,7 @@ export default App;
 
 // import './pageTransitions/slideTransition.scss'
 
-// class App extends Component { 
+// class App extends Component {
 // 	constructor(props) {
 // 		super(props)
 // 		this.state = {}
