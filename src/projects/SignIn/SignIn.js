@@ -213,6 +213,7 @@ const Styled = styled.div`
 		align-self: flex-start;
 		margin-top: -1rem;
 		margin-bottom: 2rem;
+		margin-left: 1rem;
 		text-decoration: none;
 		color: white;
 		font-weight: 550;
@@ -222,7 +223,8 @@ const Styled = styled.div`
 	}
 
 	.new {
-		margin-top: 2rem;
+		margin-top: 1rem;
+		margin-right: 0.75rem;
 		align-self: flex-end;
 		> a {
 			text-decoration: none;

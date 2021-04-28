@@ -74,7 +74,7 @@ const Component = styled.div`
 
 			&:valid + .placeholder,
 			&:focus + .placeholder {
-				top: -10px;
+				top: -12px;
 				font-size: 0.75rem;
 				color: ${lightGray};
 			}
