@@ -5,13 +5,12 @@ import logo from '../assets/images/logo.png'
 // import {particlesMoveToggler} from '../Particles/particleParams'
 
 const MappedObjects = () => {
-
 	return (
 		<>
 			{problems.map(problems => {
 				return (
 					<StyledUser>
-            {/* <button onClick={() => particlesMoveToggler()}>Stop Animation</button> */}
+						{/* <button onClick={() => particlesMoveToggler()}>Stop Animation</button> */}
 						<h5>{problems.question}</h5>
 						<span>{problems.choices.join(` `)} </span>
 						<span>{problems.answer}</span>
@@ -48,6 +47,7 @@ const StyledUser = styled.div`
 	position: relative;
 	margin: 4rem auto;
 	width: 40rem;
+	/* width: 27.5rem; */ //sing in page
 	padding: 2rem;
 	border-radius: 5px;
 	display: flex;
@@ -55,23 +55,24 @@ const StyledUser = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	/* background-color: #262626; */
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(38, 38, 38, 0.75);
 	color: white;
 	> h3 {
 		margin: 0;
 	}
 
-	@media (max-width: 40rem) {
+	@media (max-width: 46rem) {
 		& {
 			width: 22.5rem;
 			position: relative;
-			margin: 3rem 0;
+			margin: 3rem auto;
 		}
 	}
 `
 
 const StyledVideo = styled.div`
 	width: 40rem;
+
 	height: 30rem;
 	position: relative;
 	margin: 1rem 0 auto auto;
@@ -92,7 +93,7 @@ const StyledVideo = styled.div`
 		top: 2px;
 	}
 
-	@media (max-width: 40rem) {
+	@media (max-width: 46rem) {
 		& {
 			width: 22.5rem;
 			height: 16.875rem;
@@ -118,7 +119,6 @@ const StyledVideo = styled.div`
 		}
 	}
 `
-
 
 console.log(particleParams.particles.move.enable)
 export default MappedObjects
