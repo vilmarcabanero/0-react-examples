@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { InputBase, Button } from '@material-ui/core'
 import styled from 'styled-components'
 import usePasswordToggle from './usePasswordToggle'
+import UseCounter from '../../hooks/UseCounter'
 
 const darkGray = '#A9A9A9'
 const gray = '808080'
@@ -15,6 +16,7 @@ export default function SignUp() {
 	return (
 		<>
 			<Styled>
+				<UseCounter/>
 				<h1>Create an account</h1>
 					<div className='flex'>
 						<label class='custom-input'>
