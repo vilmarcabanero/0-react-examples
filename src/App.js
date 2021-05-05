@@ -1,108 +1,73 @@
-//Main
-import React from 'react'
-import './App.css'
-import ParticleBackground from './Particles/ParticleBackground'
-import PracticeTests from './projects/PracticeTests/PracticeTests'
-import SignUp from './projects/SignUp/SignUp'
-import SignIn from './projects/SignIn/SignIn'
-// import Videos from './GdriveVideos/Videos'
-import InputStyling from './projects/InputStyling/InputStyling'
-
-function App() {
-	return (
-		<>
-			<ParticleBackground />
-			{/* <Videos/> */}
-			{/* <PracticeTests /> */} 
-      {/* <InputStyling /> */}
-			<SignUp/>
-      <SignIn/>
-		</>
-	)
-}
-
-export default App
-
-//Fade Transition
-// import React, { Component } from 'react';
-// import {
-//   Route,
-//   NavLink,
-//   Switch
-// } from "react-router-dom";
-// import './App.css';
-// import Home from './Home';
-// import About from './About';
-// import {
-// 	CSSTransition,
-// 	TransitionGroup
-// } from 'react-transition-group'
-
-// // class component
-// class App extends Component {
-
-//   render() {
-
-//     return (
-//       <div className="App">
-//         <div className="nav">
-//           <NavLink exact to="/" activeClassName="active">Home</NavLink>
-//           <NavLink to="/about" activeClassName="active">About</NavLink>
-//         </div>
-//         <Switch>
-//           <Route exact path="/" component={Home} />
-//           <Route path="/about" component={About} />
-//         </Switch>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
-//Slide transition
-// import React, { Component } from 'react'
+// //Main
+// import React, { useState } from 'react'
 // import './App.css'
-// import HomePage from './pages/homePage'
-// import { Switch, Route, withRouter } from 'react-router-dom'
-// import AboutPage from './pages/aboutPage'
+// import ParticleBackground from './Particles/ParticleBackground'
+// import PracticeTests from './projects/PracticeTests/PracticeTests'
+// import SignUp from './projects/SignUp/SignUp'
+// import SignIn from './projects/SignIn/SignIn'
+// // import Videos from './GdriveVideos/Videos'
+// import InputStyling from './projects/InputStyling/InputStyling'
+// import styled, { ThemeProvider } from 'styled-components'
+// import { lightTheme, darkTheme, GlobalStyles } from './theme.js'
 
-// // import { TransitionGroup, CSSTransition } from 'react-transition-group'
+// const StyledApp = styled.div``
 
-// import './pageTransitions/slideTransition.scss'
+// function App() {
+// 	const [theme, setTheme] = useState('dark')
 
-// class App extends Component {
-// 	constructor(props) {
-// 		super(props)
-// 		this.state = {}
+// 	const themeToggler = () => {
+// 		theme === 'light' ? setTheme('dark') : setTheme('light')
 // 	}
 
-// 	render() {
-// 		// const { location } = this.props
-//     // location={location}
-// 		return (
-// 			<div className='App'>
-// 				<Switch >
-// 					<Route exact path='/' component={HomePage} />
-// 					<Route path='/about' component={AboutPage} />
-// 				</Switch>
-// 			</div>
-// 		)
-// 	}
+// 	return (
+// 		<>
+// 			{/* <ParticleBackground /> */}
+// 			{/* <Videos/> */}
+// 			{/* <PracticeTests /> */}
+// 			{/* <InputStyling /> */}
+// 			{/* <SignUp/>
+//       <SignIn/> */}
+// 			<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+// 				<GlobalStyles/>
+// 				<StyledApp>Hello World
+// 					<button onClick={() => themeToggler()}> Change Theme</button>
+// 				</StyledApp>
+// 			</ThemeProvider>
+// 		</>
+// 	)
 // }
 
 // export default App
 
-//RouterTutorial
-// import React from 'react'
-// import './App.css';
+//ThemeToggler
+import { useState } from 'react'
+import Splash from './Components/SplashScreen'
+import { ThemeProvider } from 'styled-components'
 
-// function App() {
-//   return (
-//     <>
+const LightTheme = {
+	pageBackground: 'white',
+	titleColor: '#dc658b',
+	tagLineColor: 'black',
+}
 
-//     </>
-//   );
-// }
+const DarkTheme = {
+	pageBackground: '#282c36',
+	titleColor: 'lightpink',
+	tagLineColor: 'lavender',
+}
 
-// export default App;
+const themes = {
+	light: LightTheme,
+	dark: DarkTheme,
+}
+
+function App() {
+	const [theme, setTheme] = useState('light')
+	return (
+		<ThemeProvider theme={themes[theme]}>
+			<Splash theme={theme} setTheme={setTheme} />
+		</ThemeProvider>
+	)
+}
+
+export default App
