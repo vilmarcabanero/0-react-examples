@@ -10,15 +10,12 @@ import InputStyling from './projects/InputStyling/InputStyling'
 import styled, { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme, GlobalStyles } from './theme.js'
 import ReactBootstrap from './projects/ReactBootstrap/ReactBootstrap'
+import NightMode from './projects/NightMode'
 
 const StyledApp = styled.div``
 
 function App() {
-	const [theme, setTheme] = useState('dark')
 
-	const themeToggler = () => {
-		theme === 'light' ? setTheme('dark') : setTheme('light')
-	}
 
 	return (
 		<>
@@ -34,7 +31,9 @@ function App() {
 					<button onClick={() => themeToggler()}> Change Theme</button>
 				</StyledApp>
 			</ThemeProvider> */}
-			<ReactBootstrap/>
+			{/* <ReactBootstrap/> */}
+
+			<NightMode/>
 		</>
 	)
 }

@@ -8,8 +8,9 @@ const Toggle = styled.button`
 	width: 50px;
 	border-radius: 50%;
 	border: none;
-	background-color: ${props => props.theme.titleColor};
-	color: ${props => props.theme.pageBackground};
+	background-color: ${props => props.theme.tertiaryColor};
+	color: white;
+	box-shadow: 4px 4px 8px ${props => props.theme.boxShadowColor};
 	&:focus {
 		outline: none;
 	}
@@ -38,7 +39,7 @@ const Title = styled.h1`
 `
 
 const TagLine = styled.span`
-	color: ${props => props.theme.tagLineColor};
+	color: ${props => props.theme.fontColor};
 	font-size: 18px;
 	transition: all 0.5s ease;
 `
@@ -53,7 +54,7 @@ function Splash(props) {
 	}
 
 	const icon =
-		props.theme === 'light' ? <HiMoon size={40} /> : <CgSun size={40} />
+		props.theme === 'light' ? <CgSun size={40} /> : <HiMoon size={40} />
 
 	return (
 		<Page>
