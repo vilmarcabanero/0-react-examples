@@ -1,22 +1,21 @@
 //Main
-import React, { useState } from 'react'
-import './App.css'
-import ParticleBackground from './Particles/ParticleBackground'
-import PracticeTests from './projects/PracticeTests/PracticeTests'
-import SignUp from './projects/SignUp/SignUp'
-import SignIn from './projects/SignIn/SignIn'
+import React, { useState } from 'react';
+import './App.css';
+import ParticleBackground from './Particles/ParticleBackground';
+import PracticeTests from './projects/PracticeTests/PracticeTests';
+import SignUp from './projects/SignUp/SignUp';
+import SignIn from './projects/SignIn/SignIn';
 // import Videos from './GdriveVideos/Videos'
-import InputStyling from './projects/InputStyling/InputStyling'
-import styled, { ThemeProvider } from 'styled-components'
-import { lightTheme, darkTheme, GlobalStyles } from './theme.js'
-import ReactBootstrap from './projects/ReactBootstrap/ReactBootstrap'
-import NightMode from './projects/NightMode'
+import InputStyling from './projects/InputStyling/InputStyling';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme, GlobalStyles } from './theme.js';
+import ReactBootstrap from './projects/ReactBootstrap/ReactBootstrap';
+import NightMode from './projects/NightMode';
+import MUIDarkMode from './projects/MUIDarkMode';
 
-const StyledApp = styled.div``
+const StyledApp = styled.div``;
 
 function App() {
-
-
 	return (
 		<>
 			{/* <ParticleBackground /> */}
@@ -33,12 +32,13 @@ function App() {
 			</ThemeProvider> */}
 			{/* <ReactBootstrap/> */}
 
-			<NightMode/>
+			{/* <NightMode/> */}
+			<MUIDarkMode />
 		</>
-	)
+	);
 }
 
-export default App
+export default App;
 
 // //ThemeToggler
 // import { useState } from 'react'
