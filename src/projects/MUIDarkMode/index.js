@@ -23,9 +23,9 @@ const MUIDarkMode = () => {
 			},
 			type: darkMode ? 'dark' : 'light',
 		},
-	}); 
+	});
 
-  const lightTheme = createMuiTheme({
+	const lightTheme = createMuiTheme({
 		palette: {
 			primary: {
 				main: '#4398ff',
@@ -33,19 +33,19 @@ const MUIDarkMode = () => {
 			},
 			type: 'light',
 		},
-	}); 
+	});
 
-  const darkTheme = createMuiTheme({
+	const darkTheme = createMuiTheme({
 		palette: {
 			primary: {
 				main: '#4398ff',
 				contrastText: '#fff',
 			},
-			type: 'light',
+			type: 'dark',
 		},
-	}); 
+	});
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
 			<CssBaseline /> {/*Needed if kahit walang  paper.*/}
 			<div>
 				<Grid container direction='column'>
